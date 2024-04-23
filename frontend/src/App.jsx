@@ -7,7 +7,13 @@ import {BrowserRouter , Routes ,  Route} from 'react-router-dom'
 import Register from './components/Register'
 import SpecialEvents from './components/SpecialEvents'
 import Events from './components/Events'
-import Button from './components/Button'
+import Nav from './components/Nav'
+import AdminEvents from './AdminComponents/AdminEvents'
+
+import AdminLogin from './AdminComponents/AdminLogin'
+import AdminRegister from './AdminComponents/AdminRegister'
+import AdminAddEvents from './AdminComponents/AdminAddEvent'
+
 
 
 function App() {
@@ -15,22 +21,27 @@ function App() {
 
 
   return (
-    <div>
-      {/* <Nav /> */}
+    <div className='main-div'>
+      <Nav />
         <BrowserRouter > 
         <Routes>
-        <Route path="/" element={<Events />} />
-        <Route path="/events" element={<Events />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/special" element={<SpecialEvents />} />
+            <Route path="/" element={<Events />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/special" element={<SpecialEvents />} />
+
+            {/* AdminRoutes */}
+            <Route path="/admin" element={<AdminEvents />} />
+            <Route path="/admin/events" element={<AdminEvents />} />
+            <Route path="/admin/addEvent" element={<AdminAddEvents />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/register" element={<AdminRegister />} />
+
+
        </Routes>
         </BrowserRouter>
 
-        <Button name = { "Click Me"} onClick = { () => {
-          alert("hiii")
-        }} > </Button>
-        <Button name = { "Home"} > </Button>
     </div>
   )
 }

@@ -2,22 +2,18 @@ import { useEffect, useState } from "react"
 import axios from "axios"; // Import axios
 
 
-function Events() {
+function AdminEvents() {
     const [events, setEvents] = useState([])
 
     
     if(localStorage.getItem('token') == null)
     {
-        return <center className="p-5 m-5">
-            <h1 className="">
-            You are Not Authorized Person 
-           
+        return <h1>
+            You are Not Authorized Person
         </h1>
-        <p>Please or login to access</p>
-        </center>
     }
     useEffect(() => {
-        axios.get("http://localhost:5100/user/getEvents").then((res1) => {
+        axios.get("http://localhost:5100/admin/getEvents").then((res1) => {
             setEvents(res1.data.events)
         }).catch((error1) => {
             alert("You are Not Authorixed Person")
@@ -37,7 +33,8 @@ function Events() {
                         <div className="card-body">
                             <h5 className="card-title">{event.ename}</h5>
                             <p className="card-text">{event.edesc}</p>
-                            <a href="#" className="btn btn-primary">Enroll </a>
+                            <a href="#" className="btn btn-primary">View Event</a>
+                            <a href="#" className="btn btn-danger">Delete Event</a>
                         </div>
                         <div className="card-footer text-muted">
                             {event.eduration}
@@ -50,4 +47,4 @@ function Events() {
 );
 }
 
-export default Events;
+export default AdminEvents;
