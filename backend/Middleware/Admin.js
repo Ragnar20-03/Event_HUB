@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { SECRETE } = require('../config');
 
-function validateToken (req ,res , next) 
+function validateAdminToken (req ,res , next) 
 {
    try{
     if( ! req.headers.authorization )
@@ -20,21 +20,20 @@ function validateToken (req ,res , next)
     }
 
     let verifiedToken = jwt.verify(token , SECRETE);
-
     if (!verifiedToken)
     {
         return res.status(501).json({
             msg : "unAuthorized Request"
         })
     }
-    if (verifiedToken.isAdmin == true)
+
+    if (verifiedToken.isAdmin == false)
     {
         return res.status(501).json({
             msg : "unAuthorized Request"
         })
     }
     req.username = verifiedToken.username
-    
     next() ;
    }
    catch(error)
@@ -46,4 +45,4 @@ function validateToken (req ,res , next)
 
 }
 
-module.exports = validateToken
+module.exports = validateAdminToken

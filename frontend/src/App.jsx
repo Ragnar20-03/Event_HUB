@@ -7,6 +7,7 @@ import {BrowserRouter , Routes ,  Route} from 'react-router-dom'
 import Register from './components/Register'
 import SpecialEvents from './components/SpecialEvents'
 import Events from './components/Events'
+import Button from './components/Button'
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
           <Route path="/special" element={<SpecialEvents />} />
        </Routes>
         </BrowserRouter>
+
+        <Button name = { "Click Me"} onClick = { () => {
+          alert("hiii")
+        }} > </Button>
+        <Button name = { "Home"} > </Button>
     </div>
   )
 }

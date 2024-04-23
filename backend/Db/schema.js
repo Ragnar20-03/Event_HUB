@@ -19,16 +19,23 @@ const adminSchema = new mongoose.Schema(  {
     password : {required : true , type : String} , 
     fname : {required : true , type : String },
     lname : {required : true , type : String },
+    events : [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "events"
+    }]
 }  )
 
 const eventSchema = new mongoose.Schema({
+    isSpecial : Boolean , 
     ename : String , 
     edesc : String , 
     eprice : String , 
     eduration : String , 
     edate : String ,
+    ehost : String
     // cimg : String 
 })
+
 
 const Admin = mongoose.model('Admin' , adminSchema);
 const User = mongoose.model('User' , userSchema);
@@ -37,5 +44,5 @@ const Event = mongoose.model('Event' , eventSchema);
 
 
 module.exports = {
-    Admin , User , Event
+    Admin , User , Event 
 }
