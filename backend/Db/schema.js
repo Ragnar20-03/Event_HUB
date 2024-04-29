@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
     password : String , 
     fname : {required : true , type : String },
     lname : {required : true , type : String },
+    enrollEvents : [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "events"
+    }]
 })  
 
 const adminSchema = new mongoose.Schema(  {

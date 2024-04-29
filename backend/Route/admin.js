@@ -18,13 +18,14 @@ router.post('/register', async (req, res) => {
     Admin.findOne({ username: req.body.username }).then((res1) => {
         if (res1 == null) {
 
-            Admin.create({ username: req.body.username, password: req.body.password, fname: req.body.fname, lname: req.body.lname }).then((res2) => {
+            Admin.create({ username: req.body.username, password: req.body.password, fname: "admin", lname: "admin"}).then((res2) => {
                 let token = jwt.sign({ username: res2.username , isAdmin : true  }, SECRETE)
                 return res.status(200).json({
                     msg: "Registreation Succesfull ! ",
                     token
                 })
             }).catch((err2) => {
+                console.log("error is : " , err2);
                 return res.status(400).json({
                     msg: "Something went Wrong !",
                 })

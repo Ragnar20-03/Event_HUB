@@ -13,6 +13,7 @@ import AdminEvents from './AdminComponents/AdminEvents'
 import AdminLogin from './AdminComponents/AdminLogin'
 import AdminRegister from './AdminComponents/AdminRegister'
 import AdminAddEvents from './AdminComponents/AdminAddEvent'
+import MyEvents from './components/MyEvents'
 
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/special" element={<SpecialEvents />} />
+            <Route path="/myEvents" element={<MyEvents />} />
 
             {/* AdminRoutes */}
             <Route path="/admin" element={<AdminEvents />} />

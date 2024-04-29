@@ -20,6 +20,10 @@ function AdminAddEvents() {
       ename , eprice , edate , eduration , edesc , ehost , isSpecial : false
     }).then((res1) => {
       console.log("res1 is : " ,res1);
+      alert("Event Added Succesfully !")
+    }).catch((err1) => {
+      alert("Event Add Failed !")
+
     })
   }
 
@@ -36,7 +40,7 @@ function AdminAddEvents() {
       <div class="row mb-3">
         <label for="inputPassword3" class="col-sm-2 col-form-label"  >Host Name</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3"onChange={(e) => {
+          <input type="text" class="form-control" id="inputPassword3"onChange={(e) => {
             setEhost(e.target.value)
         }} />
         </div>
@@ -45,7 +49,7 @@ function AdminAddEvents() {
       <div class="row mb-3">
         <label for="inputPassword3"  class="col-sm-2 col-form-label">Event Price</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3"  onChange={(e) => {
+          <input type="text" class="form-control" id="inputPassword3"  onChange={(e) => {
             setEprice(e.target.value)
         }} />
         </div>
@@ -54,7 +58,7 @@ function AdminAddEvents() {
       <div class="row mb-3">
         <label for="inputPassword3"   class="col-sm-2 col-form-label">Event Duration</label>
         <div class="col-sm-10">
-          <input type="password"  onChange={(e) => {
+          <input type="text"  onChange={(e) => {
             setEduration(e.target.value)
         }} class="form-control" id="inputPassword3" />
         </div>
@@ -63,7 +67,7 @@ function AdminAddEvents() {
       <div class="row mb-3">
         <label for="inputPassword3" class="col-sm-2 col-form-label">Event Date</label>
         <div class="col-sm-10">
-          <input type="password"  onChange={(e) => {
+          <input type="text"  onChange={(e) => {
             setEdate(e.target.value)
         }}  class="form-control" id="inputPassword3" />
         </div>

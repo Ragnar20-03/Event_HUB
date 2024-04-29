@@ -93,5 +93,50 @@ router.get('/', (req, res) => {
     res.send("Hello from user route")
 })
 
+router.post('/enroll' , validateToken , async (req ,res) => {
+    User.findOne({ username: req.username }).then(async (response) => {
+        if (response != null){
+        let query = await User.updateOne({ username: req.username }, {
+            $push: {
+                enrollEvents: req.body.e_id
+            }
+        })
+        if (query.acknowledged) {
+                res.status(200).json({
+                    msg: "Event Added Succesfully",
+                })
+        }}
+        else 
+        {
+            res.status(400).json({
+                msg : "Enroll Failed !"
+            })
+           
+        }
+
+    }).catch((error) => {
+        res.status(400).json({
+            msg : "Something went wrong !"
+        })
+    })
+} )
+
+router.get('/getEnrollEvents' , validateToken , async (req ,res) => {
+    User.findOne({ username: req.username }).then(async (response) => {
+        console.log(await response);
+        let events = await Event.find({
+            _id: {
+                $in: response.enrollEvents
+            }
+        })
+       return res.status(200).json({
+            events: events
+        })
+    }).catch((error) => {
+        res.status(400).json({
+            msg : "Something went wrong !"
+        })
+    })
+} )
 
 module.exports = router

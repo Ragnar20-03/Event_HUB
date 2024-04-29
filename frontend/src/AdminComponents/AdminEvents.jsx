@@ -1,16 +1,32 @@
 import { useEffect, useState } from "react"
 import axios from "axios"; // Import axios
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 function AdminEvents() {
     const [events, setEvents] = useState([])
-
-    
+    const Navigate = useNavigate    
     if(localStorage.getItem('token') == null)
     {
-        return <h1>
-            You are Not Authorized Person
-        </h1>
+        return    <div className="alert alert-danger p-4 m-4" role="alert">
+        <center className="p-5 m-5">
+            <h1>You are Not Authorized Admin</h1>
+            <h4>Please Login or Register to get Access </h4>
+            <div className="">
+            <button className="btn btn-dark  p-2 m-2" onClick={() => {
+                Navigate('/admin/login')
+            }}>
+                Login
+            </button>
+            <button className="btn btn-dark  p-2 m-2"onClick={() => {
+                Navigate('/admin/register')
+            }}>
+                Register
+            </button>
+            </div>
+        </center>
+    </div>
+
     }
     useEffect(() => {
         axios.get("http://localhost:5100/admin/getEvents").then((res1) => {

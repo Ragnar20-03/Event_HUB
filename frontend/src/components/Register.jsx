@@ -25,32 +25,28 @@ const navigate = useNavigate()
         })
     }
     return (
-        <div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" onChange={(e) => {
-     setUsername( e.target.value);
-    }} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" onChange={(e) => {
-            setPassword(e.target.value)
-    }} class="form-control" id="exampleInputPassword1" placeholder="Password" /> 
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button class="btn btn-primary" onClick={() => {
-   onRegister()
-  }}>Register</button>    
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
 
+      <div className="login-form p-4 rounded shadow" style={{ backgroundColor: 'black', color: 'white', maxWidth: '700px' }}>
+          <div className="form-group">
+              <h4 className='text-success'>
+                Register with us
+              </h4>
+              <br />
+              <label htmlFor="exampleInputEmail1">Email address</label>
+              <input type="email" onChange={(e) => setUsername(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+              
+          </div>
+          <br />
 
-
-</div>
-    )
+          <div className="form-group">
+              <label htmlFor="exampleInputPassword1">Password</label>
+              <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+          <br />
+          <button className="btn btn-success " onClick={onRegister}>Login</button>
+      </div>
+  </div>    )
 }
 
 export default Register

@@ -1,0 +1,6 @@
+button :hover{
+    transition-duration: 0.5s;
+    background-color: white;
+    color:  white;
+}
+
