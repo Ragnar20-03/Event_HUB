@@ -15,6 +15,7 @@ import AdminRegister from './AdminComponents/AdminRegister'
 import AdminAddEvents from './AdminComponents/AdminAddEvent'
 import MyEvents from './components/MyEvents'
 import Help from './components/Help'
+import Footer from './components/Footer'
 
 
 
@@ -47,6 +48,8 @@ function App() {
 
        </Routes>
         </BrowserRouter>
+
+        <Footer />
 
     </div>
   )
