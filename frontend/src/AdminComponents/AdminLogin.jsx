@@ -15,6 +15,7 @@ function Login() {
         .then((res1) => {
             console.log("Response from server of login component is: ", res1);
             localStorage.setItem('token', res1.data.token);
+            alert("Login Succesful")
             navigate('/admin/events');
         })
         .catch((err1) => {

@@ -49,8 +49,11 @@ function AdminEvents() {
                         <div className="card-body">
                             <h5 className="card-title">{event.ename}</h5>
                             <p className="card-text">{event.edesc}</p>
-                            <a href="#" className="btn btn-primary">View Event</a>
+                            <br />
+                           <div>
+                           <a href="#" className="btn btn-primary p-1 m-1">View Event</a>
                             <a href="#" className="btn btn-danger">Delete Event</a>
+                           </div>
                         </div>
                         <div className="card-footer text-muted">
                             {event.eduration}

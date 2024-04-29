@@ -7,7 +7,11 @@ function Nav() {
             <div className="">
                 <nav className="d-flex justify-content-center navbar navbar-expand-lg navbar-light bg-dark rounded-sm p-3 m-3">
                     <div className="container-fluid">
-                        <NavLink className="navbar-brand text-white" to="/">Event Hub</NavLink>
+                    <NavLink className="navbar-brand" to="/" style={{ display: 'flex', alignItems: 'center', borderRadius: '8px' }}>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLegFf2lCC2IaUpfYZR8J6M1XNGmatDCldreYYPjv4yw&s" alt="Logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '50%' }} />
+    <span style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>SNJB</span>
+</NavLink>
+
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -55,7 +59,9 @@ function Nav() {
                                             <hr className="dropdown-divider" />
                                         </li>
                                         <li>
-                                            <a className="dropdown-item" href="#">Help Center</a>
+                                        <NavLink className="dropdown-item font-weight-bold" to="/help" onClick={() => {
+                                                        Navigate('/help')
+                                                    }}>About Us </NavLink>
                                         </li>
                                     </ul>
                                 </li>

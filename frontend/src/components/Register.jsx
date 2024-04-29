@@ -44,7 +44,7 @@ const navigate = useNavigate()
               <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
           </div>
           <br />
-          <button className="btn btn-success " onClick={onRegister}>Login</button>
+          <button className="btn btn-success " onClick={onRegister}>Register</button>
       </div>
   </div>    )
 }

@@ -15,6 +15,8 @@ function AdminRegister() {
         .then((res1) => {
             console.log("Response from server of Regitser component is: ", res1);
             localStorage.setItem('token', res1.data.token);
+            alert("Registration Success")
+
             navigate('/admin/events');
         })
         .catch((err1) => {
@@ -44,7 +46,7 @@ function AdminRegister() {
                     <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control" id="exampleInputPassword1" placeholder="Password" />
                 </div>
                 <br />
-                <button className="btn btn-success " onClick={onSubmitHandler}>Login</button>
+                <button className="btn btn-success " onClick={onSubmitHandler}>Register</button>
             </div>
         </div>
     );

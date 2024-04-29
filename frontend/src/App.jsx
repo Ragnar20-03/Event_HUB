@@ -14,6 +14,7 @@ import AdminLogin from './AdminComponents/AdminLogin'
 import AdminRegister from './AdminComponents/AdminRegister'
 import AdminAddEvents from './AdminComponents/AdminAddEvent'
 import MyEvents from './components/MyEvents'
+import Help from './components/Help'
 
 
 
@@ -24,6 +25,8 @@ function App() {
   return (
     <div className='main-div'>
       <Nav />
+
+
         <BrowserRouter > 
         <Routes>
             <Route path="/" element={<Events />} />
@@ -32,6 +35,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/special" element={<SpecialEvents />} />
             <Route path="/myEvents" element={<MyEvents />} />
+            <Route path="/help" element={<Help />} />
 
             {/* AdminRoutes */}
             <Route path="/admin" element={<AdminEvents />} />
